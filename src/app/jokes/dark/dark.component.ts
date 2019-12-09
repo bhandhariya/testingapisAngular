@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { JokesService } from '../jokes.service';
 
 @Component({
   selector: 'app-dark',
@@ -9,14 +10,14 @@ import { HttpClient } from '@angular/common/http';
 export class DarkComponent implements OnInit {
 
   joke;
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private service:JokesService) { }
 
   ngOnInit() {
     this.getAnimalJoke();
   }
 
   getAnimalJoke(){
-    this.http.get('https://api.chucknorris.io/jokes/random?category=career').subscribe(this.getAnimalJokeCB)
+    this.service.careerJoke().pipe().subscribe(this.getAnimalJokeCB)
   }
   getAnimalJokeCB=(dt)=>{
     this.joke=dt;

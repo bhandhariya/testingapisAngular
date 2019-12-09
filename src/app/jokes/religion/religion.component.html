@@ -1,0 +1,12 @@
+<p>
+  religion works!
+</p>
+
+<div class="card text-left" *ngIf="joke" >
+  <img class="card-img-top" src="{{joke.icon_url}}" alt="">
+  <div class="card-body">
+    <h4 class="card-title">{{joke.categories[0]}}</h4>
+    <p class="card-text">{{joke.value}}</p>
+  </div>
+</div>
+<button (click)="getAnimalJoke()" class="btn btn-primary" >Next</button>
