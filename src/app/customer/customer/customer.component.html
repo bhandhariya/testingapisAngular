@@ -1,12 +1,13 @@
 <!-- Nav tabs -->
 <ul class="nav nav-tabs" id="navId">
   <li class="nav-item">
-    <a  class="nav-link " [routerLink]="['/jokes']">Joke</a>
-  </li>
-  <li class="nav-item">
-    <a  class="nav-link " [routerLink]="['/customer']">Customer</a>
+    <a  class="nav-link "    [routerLink]="['/customer/home']">Home</a>
   </li>
   
+  <li class="nav-item">
+    <a  class="nav-link " [routerLink]="['/customer/detail']">Details</a>
+  </li>
 </ul>
+
 
 <router-outlet></router-outlet>
